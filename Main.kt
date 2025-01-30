@@ -10,7 +10,7 @@ fun main(){
     var producto2 = Producto("Calabazas","Buenas calabazas",2.0,2,10.0)
     println(producto2)
 
-    var pedido1= Pedidos(mapOf(producto1 to 1,producto2 to 2),"30/01/2025")
+    var pedido1= Pedidos(mutableMapOf(producto1 to 1,producto2 to 2),"30/01/2025")
     var pago1 = TarjetaCredito(3.0,"1234567891014124","02/02/2040","Visa")
     var pago2 = Cheque(3.0,"ChequeLuismi","BBVA")
     var pago3 = Cash(3.0,"€")

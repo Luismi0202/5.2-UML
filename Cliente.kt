@@ -5,6 +5,20 @@ class Cliente(
     var pedidosPagados: MutableList<Pedidos> = mutableListOf()
 
     fun realizarPedido(pedido:Pedidos){
+        for(producto in pedido.productos.keys){
+            var cantidadPedida = pedido.productos[producto]
+            var cantidadTotal = producto.stock
+
+            if(cantidadPedida == null){
+                cantidadPedida = 0
+            }
+
+            if(cantidadPedida > cantidadTotal){
+                var cantidadAnadida = cantidadPedida-cantidadTotal
+                println("Para el producto $producto solo se han añadido $cantidadAnadida por falta de stock")
+                pedido.productos[producto] = cantidadAnadida
+            }
+        }
         listaPedidos.add(pedido)
     }
 

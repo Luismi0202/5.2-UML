@@ -1,7 +1,7 @@
 import kotlin.math.round
 
 class Pedidos(
-    var productos: Map<Producto,Int>,
+    var productos: MutableMap<Producto,Int>,
     var fecha:String,
     var estado:Estado = Estado.PDTE,
 ) {
